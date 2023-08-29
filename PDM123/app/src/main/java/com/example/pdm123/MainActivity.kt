@@ -11,11 +11,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.pdm123.ui.theme.PDM123Theme
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.pdm123.navigation.NavBarItems
+import com.example.pdm123.navigation.NavRoutes
 
 
 class MainActivity : ComponentActivity() {
@@ -54,13 +58,19 @@ fun NavigationHost(navController: NavHostController){
         startDestination = NavRoutes.firstpartial.route
     ){
         composable(NavRoutes.firstpartial.route){
-            FirstPartial()
+            FirstPartialView(navController = navController)
         }
         composable(NavRoutes.secondpartial.route){
-            SecondPartial()
+            SecondPartialView()
         }
         composable(NavRoutes.thirdpartial.route){
-            ThirdPartial()
+            ThirdPartialView()
+        }
+        composable(NavRoutes.padelscore.route){
+            PadelScoreView(navController = navController)
+        }
+        composable(NavRoutes.evenorodd.route){
+            ParoNonView(navController = navController)
         }
     }
 }
@@ -71,7 +81,7 @@ fun BottomNavigationBar(navController: NavHostController){
         val backStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = backStackEntry?.destination?.route
 
-        NavBarItems.NavBarItems.forEach{navItem ->
+        NavBarItems.NavBarItems.forEach{ navItem ->
 
             BottomNavigationItem(
 
@@ -87,10 +97,10 @@ fun BottomNavigationBar(navController: NavHostController){
                 },
                 icon = {
                     Icon(imageVector = navItem.image,
-                        contentDescription = navItem.title)
+                        contentDescription = navItem.title.toString())
                 },
                 label = {
-                    Text(text = navItem.title)
+                    Text(text = stringResource(id = navItem.title))
                 }
             )
 
