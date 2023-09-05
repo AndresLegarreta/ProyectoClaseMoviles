@@ -5,4 +5,5 @@
     <string name="third_partial">Third Partial</string>
     <string name="padel_score">Padel Score</string>
     <string name="even_or_odd">Even or Odd</string>
+    <string name="random_card">Random Card</string>
 </resources>

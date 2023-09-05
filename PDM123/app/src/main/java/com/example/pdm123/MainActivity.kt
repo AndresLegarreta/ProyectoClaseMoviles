@@ -12,12 +12,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.pdm123.ui.theme.PDM123Theme
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.pdm123.firstpartial.ParoNonViewModel
+import com.example.pdm123.firstpartial.RandomCardViewModel
 import com.example.pdm123.navigation.NavBarItems
 import com.example.pdm123.navigation.NavRoutes
 
@@ -70,7 +71,10 @@ fun NavigationHost(navController: NavHostController){
             PadelScoreView(navController = navController)
         }
         composable(NavRoutes.evenorodd.route){
-            ParoNonView(navController = navController)
+            ParoNonView(navController = navController, viewModel = ParoNonViewModel())
+        }
+        composable(NavRoutes.randomcard.route){
+            RandomCardView(navController = navController, viewModel = RandomCardViewModel())
         }
     }
 }
