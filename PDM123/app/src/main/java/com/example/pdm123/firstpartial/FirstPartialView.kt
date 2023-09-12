@@ -37,5 +37,13 @@ fun FirstPartialView(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.even_or_odd))
         }
+        Button(
+            onClick = { navController.navigate(route = "randomcard") },
+            modifier = Modifier
+                .fillMaxWidth() // Fill the available width
+                .padding(16.dp) // Add padding
+        ) {
+            Text(text = stringResource(id = R.string.random_card))
+        }
     }
 }
