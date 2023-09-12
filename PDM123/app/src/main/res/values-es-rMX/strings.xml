@@ -7,4 +7,6 @@
     <string name="padel_score">Puntuacion de Padel</string>
     <string name="even_or_odd">Par o Non</string>
     <string name="random_card">Carta Aleatoria</string>
+    <string name="minor_number">Numero Menor</string>
+    <string name="barber_shop">Barberia</string>
 </resources>

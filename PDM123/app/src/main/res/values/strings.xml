@@ -6,4 +6,6 @@
     <string name="padel_score">Padel Score</string>
     <string name="even_or_odd">Even or Odd</string>
     <string name="random_card">Random Card</string>
+    <string name="minor_number">Minor Number</string>
+    <string name="barber_shop">Barber Shop</string>
 </resources>

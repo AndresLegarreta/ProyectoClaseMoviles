@@ -42,7 +42,5 @@ fun RandomCardView(navController: NavController, viewModel: RandomCardViewModel)
                 Text(text = "Random")
             }
         }
-
-
     }
 }

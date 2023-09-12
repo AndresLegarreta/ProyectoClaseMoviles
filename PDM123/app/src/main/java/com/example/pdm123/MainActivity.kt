@@ -17,8 +17,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.pdm123.firstpartial.ParoNonViewModel
-import com.example.pdm123.firstpartial.RandomCardViewModel
+import com.example.pdm123.firstpartial.*
 import com.example.pdm123.navigation.NavBarItems
 import com.example.pdm123.navigation.NavRoutes
 
@@ -75,6 +74,12 @@ fun NavigationHost(navController: NavHostController){
         }
         composable(NavRoutes.randomcard.route){
             RandomCardView(navController = navController, viewModel = RandomCardViewModel())
+        }
+        composable(NavRoutes.nummenor.route){
+            NumMenorView(navController = navController, viewModel = NumMenorViewModel())
+        }
+        composable(NavRoutes.barbershop.route){
+            BarberShopView(navController = navController, viewModel = BarberShopViewModel())
         }
     }
 }

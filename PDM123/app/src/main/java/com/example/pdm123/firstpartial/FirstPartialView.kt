@@ -45,5 +45,22 @@ fun FirstPartialView(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.random_card))
         }
+        Button(
+            onClick = { navController.navigate(route = "minornumber") },
+            modifier = Modifier
+                .fillMaxWidth() // Fill the available width
+                .padding(16.dp) // Add padding
+        ) {
+            Text(text = stringResource(id = R.string.minor_number))
+        }
+        Button(
+            onClick = { navController.navigate(route = "barbershop") },
+            modifier = Modifier
+                .fillMaxWidth() // Fill the available width
+                .padding(16.dp) // Add padding
+        ) {
+            Text(text = stringResource(id = R.string.barber_shop))
+        }
+
     }
 }
