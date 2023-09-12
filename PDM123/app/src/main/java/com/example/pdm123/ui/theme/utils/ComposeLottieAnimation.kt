@@ -19,3 +19,12 @@ fun ComposeLottieAnimation(modifier: Modifier) {
         iterations = LottieConstants.IterateForever,
     )
 }
+@Composable
+fun ComposeLottieAnimation2(modifier: Modifier) {
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.animation_lmfkdcq5))
+    LottieAnimation(
+        modifier = modifier,
+        composition = composition,
+        iterations = LottieConstants.IterateForever,
+    )
+}

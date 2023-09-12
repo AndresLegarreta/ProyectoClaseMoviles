@@ -13,6 +13,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.pdm123.firstpartial.ParoNonViewModel
 import com.example.pdm123.ui.theme.utils.ComposeLottieAnimation
+import com.example.pdm123.ui.theme.utils.ComposeLottieAnimation2
 
 @Composable
 fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
@@ -27,7 +28,18 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
         verticalArrangement = Arrangement.Center
 
     ) {
-        ComposeLottieAnimation(modifier = Modifier.height(200.dp).width(200.dp))
+        if (viewModel.evenOrOddAnimation.value == true) {
+            ComposeLottieAnimation(
+                modifier = Modifier
+                    .height(200.dp)
+                    .width(200.dp)
+            )
+        } else {
+            ComposeLottieAnimation2(modifier = Modifier
+                .height(200.dp)
+                .width(200.dp))
+        }
+
         Text(text = "Ingresa un numero")
         TextField(
             value = txtnumber,
@@ -41,5 +53,6 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
         )
 
         Text(text = status)
+
     }
 }
