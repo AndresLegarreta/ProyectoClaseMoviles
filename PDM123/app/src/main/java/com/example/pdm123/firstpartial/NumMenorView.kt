@@ -22,8 +22,6 @@ fun NumMenorView (navController: NavController, viewModel: NumMenorViewModel){
     var number3 by remember { mutableStateOf("") }
     val minorNumber by viewModel.getMin().observeAsState(0)
 
-
-
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
