@@ -5,4 +5,17 @@
     <string name="third_partial">Third Partial</string>
     <string name="padel_score">Padel Score</string>
     <string name="even_or_odd">Even or Odd</string>
+    <string name="even">Even</string>
+    <string name="odd">Odd</string>
+    <string name="zero">Zero</string>
+    <string name="enter_number">Enter a number</string>
+    <string name="random_card">Random Card</string>
+    <string name="hide">Hide</string>
+    <string name="random">Random</string>
+    <string name="minor_number">Minor Number</string>
+    <string name="whats_the_minor">Minor</string>
+    <string name="consult">Consult</string>
+    <string name="the_minor_is">Minors</string>
+    <string name="total">Total</string>
+    <string name="barber_shop">Barber Shop</string>
 </resources>

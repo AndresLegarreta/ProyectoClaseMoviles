@@ -6,5 +6,17 @@
     <string name="third_partial">Tercer Parcial</string>
     <string name="padel_score">Puntuacion de Padel</string>
     <string name="even_or_odd">Par o Non</string>
-
+    <string name="even">Par</string>
+    <string name="odd">Non</string>
+    <string name="zero">Cero</string>
+    <string name="enter_number">Ingresa un numero</string>
+    <string name="random_card">Carta Aleatoria</string>
+    <string name="hide">Ocultar</string>
+    <string name="random">Aleatorio</string>
+    <string name="minor_number">Numero Menor</string>
+    <string name="whats_the_minor">Menor</string>
+    <string name="consult">Consultar</string>
+    <string name="the_minor_is">Menores</string>
+    <string name="total">Total</string>
+    <string name="barber_shop">Barberia</string>
 </resources>
