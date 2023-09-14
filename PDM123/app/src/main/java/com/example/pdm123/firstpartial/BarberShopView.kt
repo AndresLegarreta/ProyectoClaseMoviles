@@ -9,6 +9,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.pdm123.R
@@ -38,7 +39,7 @@ fun BarberShopView(navController: NavController, viewModel: BarberShopViewModel)
                 }
                 Image(
                     painter = painterResource(id = com.example.pdm123.R.drawable.corte),
-                    contentDescription = "Imagen",
+                    contentDescription = "Image",
                     modifier = Modifier
                         .height(70.dp)
                         .width(70.dp)
@@ -56,7 +57,7 @@ fun BarberShopView(navController: NavController, viewModel: BarberShopViewModel)
                 }
                 Image(
                     painter = painterResource(id = com.example.pdm123.R.drawable.barba),
-                    contentDescription = "Imagen",
+                    contentDescription = "Image",
                     modifier = Modifier
                         .height(70.dp)
                         .width(70.dp)
@@ -74,7 +75,7 @@ fun BarberShopView(navController: NavController, viewModel: BarberShopViewModel)
                 }
                 Image(
                     painter = painterResource(id = com.example.pdm123.R.drawable.corteybarba),
-                    contentDescription = "Imagen",
+                    contentDescription = "Image",
                     modifier = Modifier
                         .height(70.dp)
                         .width(70.dp)
@@ -90,7 +91,7 @@ fun BarberShopView(navController: NavController, viewModel: BarberShopViewModel)
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Total:")
+            Text(text = stringResource(id = R.string.total))
             Text(text = "$total")
         }
     }

@@ -9,6 +9,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.pdm123.firstpartial.RandomCardViewModel
@@ -24,7 +25,7 @@ fun RandomCardView(navController: NavController, viewModel: RandomCardViewModel)
     ) {
         Image(
             painter = painterResource(id = cardId),
-            contentDescription = "Imagen",
+            contentDescription = "Image",
             modifier = Modifier
                 .height(450.dp)
                 .width(450.dp)
@@ -33,13 +34,13 @@ fun RandomCardView(navController: NavController, viewModel: RandomCardViewModel)
             Button(
                 onClick = { viewModel.hideCard() }
             ) {
-                Text(text = "Ocultar")
+                Text(text = stringResource(id = R.string.hide))
             }
             Spacer(modifier = Modifier.width(20.dp))
             Button(
                 onClick = { viewModel.getRandomNumber() }
             ) {
-                Text(text = "Random")
+                Text(text = stringResource(id = R.string.random))
             }
         }
     }

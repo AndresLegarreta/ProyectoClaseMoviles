@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.pdm123.firstpartial.ParoNonViewModel
@@ -40,7 +41,7 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
                 .width(200.dp))
         }
 
-        Text(text = "Ingresa un numero")
+        Text(text = stringResource(id = R.string.enter_number))
         TextField(
             value = txtnumber,
             onValueChange = {
@@ -51,8 +52,7 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         )
-
-        Text(text = status)
+        Text(text = status.toString())
 
     }
 }

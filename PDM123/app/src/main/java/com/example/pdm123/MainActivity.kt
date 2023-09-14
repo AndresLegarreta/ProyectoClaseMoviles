@@ -75,7 +75,7 @@ fun NavigationHost(navController: NavHostController){
         composable(NavRoutes.randomcard.route){
             RandomCardView(navController = navController, viewModel = RandomCardViewModel())
         }
-        composable(NavRoutes.nummenor.route){
+        composable(NavRoutes.minornumber.route){
             NumMenorView(navController = navController, viewModel = NumMenorViewModel())
         }
         composable(NavRoutes.barbershop.route){

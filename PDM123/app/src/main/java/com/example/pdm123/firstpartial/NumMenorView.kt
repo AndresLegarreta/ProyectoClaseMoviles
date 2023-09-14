@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.navigation.NavController
 import com.example.pdm123.firstpartial.NumMenorViewModel
@@ -27,7 +28,7 @@ fun NumMenorView (navController: NavController, viewModel: NumMenorViewModel){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Cual es el menor?")
+        Text(text = stringResource(id = R.string.whats_the_minor))
         TextField(
             value = number1,
             onValueChange = {
@@ -54,8 +55,9 @@ fun NumMenorView (navController: NavController, viewModel: NumMenorViewModel){
         Button(
             onClick = { viewModel.getMinor(number1.toInt(),number2.toInt(),number3.toInt()) }
         ) {
-            Text(text = "Consultar")
+            Text(text =  stringResource(id = R.string.consult))
         }
-        Text(text = "El numero menor es: $minorNumber")
+        Text(text = stringResource(id = R.string.the_minor_is))
+        Text(text = "$minorNumber")
     }
 }
