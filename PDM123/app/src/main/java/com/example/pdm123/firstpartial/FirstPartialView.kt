@@ -61,6 +61,14 @@ fun FirstPartialView(navController: NavController) {
         ) {
             Text(text = stringResource(id = R.string.barber_shop))
         }
+        Button(
+            onClick = { navController.navigate(route = "firstpartialtest") },
+            modifier = Modifier
+                .fillMaxWidth() // Fill the available width
+                .padding(16.dp) // Add padding
+        ) {
+            Text(text = stringResource(id = R.string.first_partial_test))
+        }
 
     }
 }

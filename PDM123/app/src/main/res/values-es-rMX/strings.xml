@@ -19,4 +19,9 @@
     <string name="the_minor_is">Menores</string>
     <string name="total">Total</string>
     <string name="barber_shop">Barberia</string>
+    <string name="first_partial_test">Primer Examen Parcial</string>
+    <string name="total_production">Produccion Total:</string>
+    <string name="current_production">Produccion Actual:</string>
+    <string name="percentage">Porcentage:</string>
+    <string name="calculate">Calcular</string>
 </resources>
