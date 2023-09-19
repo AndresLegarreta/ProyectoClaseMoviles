@@ -20,6 +20,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import com.example.pdm123.R
 import android.content.Context
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 
@@ -31,12 +32,13 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
     var multiplier by remember { mutableStateOf(80) }
     val percentProduct = viewModel.percentProduct.observeAsState(0.0)
     val context = LocalContext.current
-    val redScreenState = viewModel.redscreen.observeAsState(false)
+    val redScreenState by viewModel.redscreen.observeAsState(false)
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .background(if (redScreenState) Color.Red else Color.Transparent),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -74,7 +76,8 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
                             val total = totalproduct.toIntOrNull() ?: 0
                             val result = total * 80
                             val message = "$result apples in total"
-                            showToast(context, message)}
+                            showToast(context, message)
+                        }
                 )
             }
         }
@@ -106,7 +109,8 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
                             val total = actualproduct.toIntOrNull() ?: 0
                             val result = total * 80
                             val message = "$result apples currently"
-                            showToast(context, message) }
+                            showToast(context, message)
+                        }
                 )
             }
         }
@@ -161,14 +165,6 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
             Text(text = stringResource(id = R.string.percentage))
             Spacer(modifier = Modifier.width(16.dp))
             Text(text = "${percentProduct.value}%")
-            if (redScreenState.value) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(androidx.compose.ui.graphics.Color.Red)
-                ) {
-                }
-            }
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -188,11 +184,10 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
         }
     }
 }
+
 fun showToast(context: Context, message: String) {
     Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }
-
-
 
 
 

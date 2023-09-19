@@ -32,25 +32,12 @@ class FirstPartialTestViewModel {
         val actual = actualProduction.value ?: 0
         val calcuPercentage = (actual.toDouble() / total.toDouble()) * 100
         percentProduct.value = calcuPercentage
+        redscreen.value = calcuPercentage >= 70.0
 
 
     }
-    fun calculateToastTotal(total: Int) {
-            val newValue = total * 80
-            val message = "Valor total multiplicado por 80: $newValue"
-            showToast(message)
     }
 
-    fun calculateToastActual(actual: Int) {
-            val newValue = actual * 80
-            val message = "Valor actual multiplicado por 80: $newValue"
-            showToast(message)
-
-        }
-
-    }
-    private fun showToast(message: String){
-}
 
 
 
