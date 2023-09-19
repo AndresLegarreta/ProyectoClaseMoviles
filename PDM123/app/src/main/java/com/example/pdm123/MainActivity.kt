@@ -81,6 +81,10 @@ fun NavigationHost(navController: NavHostController){
         composable(NavRoutes.barbershop.route){
             BarberShopView(navController = navController, viewModel = BarberShopViewModel())
         }
+        composable(NavRoutes.firstpartialtest.route){
+            FirstPartialTestView(navController = navController, viewModel = FirstPartialTestViewModel())
+        }
+
     }
 }
 

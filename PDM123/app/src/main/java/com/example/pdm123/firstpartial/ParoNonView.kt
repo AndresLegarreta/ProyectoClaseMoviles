@@ -23,6 +23,13 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
      */
     var txtnumber by remember { mutableStateOf("") }
     val status by viewModel.getResultStatus().observeAsState("")
+    val resultText = when (status) {
+        R.string.even -> stringResource(id = R.string.even)
+        R.string.odd -> stringResource(id = R.string.odd)
+        R.string.zero -> stringResource(id = R.string.zero)
+        else -> ""
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -52,7 +59,7 @@ fun ParoNonView(navController: NavController, viewModel: ParoNonViewModel) {
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         )
-        Text(text = status.toString())
+        Text(text = resultText)
 
     }
 }
