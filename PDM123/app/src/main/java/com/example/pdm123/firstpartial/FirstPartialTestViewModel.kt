@@ -21,10 +21,10 @@ class FirstPartialTestViewModel {
         totalProduction.value = total
     }
 
-    fun addActualProduction(amount: Int) {
+    fun addActualProduction(amount: Int): Int {
         val currentProduction = actualProduction.value ?: 0
         actualProduction.value = currentProduction + amount
-        calculatePercentage()
+        return currentProduction + amount
     }
 
     fun calculatePercentage() {

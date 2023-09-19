@@ -29,16 +29,15 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
     var totalproduct by remember { mutableStateOf("") }
     var actualproduct by remember { mutableStateOf("") }
     var actualProductionValue by remember { mutableStateOf(0) }
-    var multiplier by remember { mutableStateOf(80) }
     val percentProduct = viewModel.percentProduct.observeAsState(0.0)
     val context = LocalContext.current
     val redScreenState by viewModel.redscreen.observeAsState(false)
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .background(if (redScreenState) Color.Red else Color.Transparent)
             .padding(16.dp)
-            .background(if (redScreenState) Color.Red else Color.Transparent),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -120,38 +119,29 @@ fun FirstPartialTestView(navController: NavController, viewModel: FirstPartialTe
         Row(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Button(onClick = {
-                viewModel.addActualProduction(5)
-                val newValue = actualProductionValue + 5
-                actualProductionValue = newValue
-                actualproduct = newValue.toString()
+            Button(onClick = { actualproduct = viewModel.addActualProduction(5).toString()
+
             }) {
                 Text(text = "+5")
             }
             Spacer(modifier = Modifier.width(12.dp))
             Button(onClick = {
-                viewModel.addActualProduction(15)
-                val newValue = actualProductionValue + 15
-                actualProductionValue = newValue
-                actualproduct = newValue.toString()
+                actualproduct = viewModel.addActualProduction(15).toString()
+
             }) {
                 Text(text = "+15")
             }
             Spacer(modifier = Modifier.width(12.dp))
             Button(onClick = {
-                viewModel.addActualProduction(30)
-                val newValue = actualProductionValue + 30
-                actualProductionValue = newValue
-                actualproduct = newValue.toString()
+                actualproduct = viewModel.addActualProduction(30).toString()
+
             }) {
                 Text(text = "+30")
             }
             Spacer(modifier = Modifier.width(12.dp))
             Button(onClick = {
-                viewModel.addActualProduction(50)
-                val newValue = actualProductionValue + 50
-                actualProductionValue = newValue
-                actualproduct = newValue.toString()
+                actualproduct = viewModel.addActualProduction(50).toString()
+
             }) {
                 Text(text = "+50")
             }

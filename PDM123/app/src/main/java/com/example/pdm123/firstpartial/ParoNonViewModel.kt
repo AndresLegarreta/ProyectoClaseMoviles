@@ -9,6 +9,7 @@ class ParoNonViewModel : ViewModel() {
     var evenOrOddAnimation = MutableLiveData(false)
     fun getResultStatus(): MutableLiveData<Int> = evenOrOddStatus
     fun getResultAnimation(): MutableLiveData<Boolean> = evenOrOddAnimation
+
     fun calcuEvenOrOdd(number: Int) {
 
         if (number != 0) {
